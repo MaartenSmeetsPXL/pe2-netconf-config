@@ -109,7 +109,4 @@
       </server>
     </ntp>
 
-    <!-- Banner -->
-    <banner>
-      <motd>
-        <banner>*** Authorized access only ***
+
