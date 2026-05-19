@@ -73,13 +73,12 @@
 
     </interface>
 
-    <!-- DNS -->
+    <!-- DNS + Static Route + ACL -->
     <ip>
       <name-server>
         <address>9.9.9.9</address>
       </name-server>
 
-      <!-- Static Route -->
       <route>
         <ip-route-interface-forwarding-list>
           <prefix>198.51.100.0</prefix>
@@ -90,7 +89,6 @@
         </ip-route-interface-forwarding-list>
       </route>
 
-      <!-- ACL -->
       <access-list>
         <standard>
           <name>20</name>
@@ -114,61 +112,4 @@
     <!-- Banner -->
     <banner>
       <motd>
-        <banner>*** Authorized access only ***</banner>
-      </motd>
-    </banner>
-
-    <!-- User -->
-    <username>
-      <name>netops</name>
-      <privilege>15</privilege>
-      <secret>
-        <secret>cisco123</secret>
-      </secret>
-    </username>
-
-    <!-- VLAN -->
-    <vlan>
-      <vlan-list>
-        <id>10</id>
-        <name>USERS</name>
-      </vlan-list>
-    </vlan>
-
-    <!-- SNMP -->
-    <snmp-server>
-      <community>
-        <name>public</name>
-        <RO/>
-      </community>
-    </snmp-server>
-
-    <!-- OSPF -->
-    <router>
-      <ospf>
-        <id>1</id>
-        <router-id>10.10.10.1</router-id>
-
-        <network>
-          <ip>192.168.0.0</ip>
-          <mask>0.0.0.255</mask>
-          <area>0</area>
-        </network>
-
-        <network>
-          <ip>192.168.10.0</ip>
-          <mask>0.0.0.255</mask>
-          <area>0</area>
-        </network>
-
-        <network>
-          <ip>10.10.10.1</ip>
-          <mask>0.0.0.0</mask>
-          <area>0</area>
-        </network>
-
-      </ospf>
-    </router>
-
-  </native>
-</config>
+        <banner>*** Authorized access only ***
